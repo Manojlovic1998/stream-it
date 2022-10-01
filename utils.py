@@ -1,9 +1,26 @@
-"""This is a helper function that deals with Unix pipes.
-"""
-
 import errno
 from glob import glob
 import os
+import time
+import sys
+
+
+def sprint(string: str, timeout: float = None):
+    """Streams logo to stdout device.
+    Args:
+        string (str): _Logo string_
+        timeout (float): _Float value for which to timeout the stdout stream_
+    """
+    for char in string + "\n":
+        # Write char to the stdout device
+        sys.stdout.write(char)
+
+        # Flush the buffer
+        sys.stdout.flush()
+
+        # Timeout output stream
+        if timeout and isinstance(timeout, float):
+            time.sleep(timeout)
 
 
 def expand_path(path) -> list:
