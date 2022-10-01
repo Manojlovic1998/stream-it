@@ -1,10 +1,16 @@
 import click
-from utils import sprint
+from streamit.utils import sprint
 
 
 @click.group()
 def cli():
-    pass
+    """This script allows you to automate downloading videos from different platforms."""
+
+
+@click.command()
+@click.option("--data", help="Relative or absolute path to your input json file.")
+def download(data):
+    click.echo(data)
 
 
 @click.command()
@@ -94,4 +100,5 @@ def logo():
     sprint(logo, 0.001)
 
 
-cli.add_command(print_logo)
+cli.add_command(logo)
+cli.add_command(download)
