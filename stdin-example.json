@@ -1,0 +1,35 @@
+{
+  "save_folder_name": "Folder Name",
+  "path_to_folder": "relative | absolute",
+  "scramble_mac_address": "true | false",
+  "youtube": [
+    {
+      "video_name": "Video Name",
+      "uri_identifier": "platform uri_identifier"
+    },
+    {
+      "video_name": "Video Name",
+      "uri_identifier": "platform uri_identifier"
+    }
+  ],
+  "wista": [
+    {
+      "video_name": "Video Name",
+      "video_identifier": "platform uri_identifier"
+    },
+    {
+      "video_name": "Video Name",
+      "video_identifier": "platform uri_identifier"
+    }
+  ],
+  "vimeo": [
+    {
+      "video_name": "Video Name",
+      "uri_identifier": "platform uri_identifier"
+    },
+    {
+      "video_name": "Video Name",
+      "uri_identifier": "platform uri_identifier"
+    }
+  ]
+}
