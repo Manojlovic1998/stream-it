@@ -1,5 +1,6 @@
+import json
 import click
-from streamit.utils import sprint
+from streamit.utils import sprint, json_format_validation
 
 
 @click.group()
@@ -8,9 +9,14 @@ def cli():
 
 
 @click.command()
-@click.option("--data", help="Relative or absolute path to your input json file.")
-def download(data):
-    click.echo(data)
+@click.option("-f",
+              "--file",
+              help="Relative or absolute path to your input json file.",
+              type=click.File(mode='r', errors='strict'))
+def download(file):
+    # Check if the file has a valid json format
+    # if valid returns json, else raises exception
+    inputJson = json_format_validation(file)
 
 
 @click.command()
