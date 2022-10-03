@@ -3,6 +3,8 @@ from glob import glob
 import os
 import time
 import sys
+import json
+import click
 
 
 def sprint(string: str, timeout: float = None):
@@ -71,3 +73,26 @@ def create_dir(path):
             pass
         else:
             print(error)
+
+
+def json_format_validation(file):
+    """Simple json format validation utility.
+    Checks if the file has valid schema. 
+    If valid return the json data, else raise error.
+
+    Args:
+        file (<class '_io.TextIOWrapper'>): Json file text stream.
+
+    Raises:
+        click.FileError: FileError in case the format of JSON
+         file that is being loaded is not valid. 
+
+    Returns:
+        <class 'dict'>: Python dict containing json data from the input file.
+    """
+    try:
+        return json.load(file)
+    except ValueError as err:
+        raise click.FileError(
+            file.name, f"""The format of JSON file can not be loaded. \
+                           Check if it is valid json format. Error: {err}""")
