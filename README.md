@@ -16,6 +16,26 @@ Python CLI tool for downloading videos.
 
 This CLI tool is built with the help of _click_ lib. The _click_ library has built in exception handlers which are used to show error messages or/and abort command execution.
 
+## Legal Issues
+
+This software is distributed under the [MIT license](https://raw.github.com/manojlovic1998/stream-it/master/LICENSE).
+
+In particular, please be aware that
+
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
+
+Translated to human words:
+
+_In case your use of the software forms the basis of copyright infringement, or you use the software for any other illegal purposes, the authors cannot take any responsibility for you._
+
+I only ship the code here, and how you are going to use it is left to your own discretion.
+
 # Technologies
 
 - [Pipenv](https://pipenv.pypa.io/en/latest/)
