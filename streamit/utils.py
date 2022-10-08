@@ -4,7 +4,9 @@ import os
 import time
 import sys
 import json
+from xml.dom import ValidationErr
 import click
+import jsonschema
 
 
 def sprint(string: str, timeout: float = None):
@@ -96,3 +98,31 @@ def json_format_validation(file):
         raise click.FileError(
             file.name, f"""The format of JSON file can not be loaded. \
                            Check if it is valid json format. Error: {err}""")
+
+
+def json_schema_validation(json_data):
+    # Schema to validate against
+    schema = {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+                "properties": {
+                    "folder_name": {"type": "string"},
+                    "path_to_folder": {"type": "string"},
+                    "scramble_mac_address": {"type": "boolean"},
+                    "youtube": {
+                        "type": "array",
+                        "uniqueItems": True,
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "video_name": {"type": "string"},
+                                "uri_identifier": {"type": "string"}
+                            }
+                        }
+                    }
+                },
+        "required": ["path_to_folder"],
+        "additionalProperties": False
+    }
+    jsonschema.validate(instance=json_data,
+                        schema=schema)
