@@ -16,6 +16,16 @@ Python CLI tool for downloading videos.
 
 This CLI tool is built with the help of _click_ lib. The _click_ library has built in exception handlers which are used to show error messages or/and abort command execution.
 
+### MAC Address
+
+Tool is capable of changing device's MAC address before starting download. This process can be repeated before each video download or just one time on the initial start of the script. By default this feature is switched off.
+
+Why change MAC Address:
+
+- To bypass MAC Address filtering.
+- To bypass certain kind of MITM spoofing attack
+- To avoid device tracking in public network.
+
 ## Legal Issues
 
 This software is distributed under the [MIT license](https://raw.github.com/manojlovic1998/stream-it/master/LICENSE).
